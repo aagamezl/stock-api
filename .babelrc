@@ -1,0 +1,14 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "targets": {
+          "node": "11.10"
+        }
+      }
+    ]
+  ],
+  "plugins": ["@babel/plugin-proposal-async-generator-functions"]
+}

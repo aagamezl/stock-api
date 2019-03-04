@@ -1,0 +1,32 @@
+{
+  "name": "ideaware-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "lint": "standard src/**/*.js",
+    "start": "npm run build && node dist/index.js",
+    "start:watch": "npm run build && nodemon --inspect dist/index.js",
+    "test": "ava",
+    "test:watch": "ava --watch"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ]
+  },
+  "keywords": [],
+  "author": "Álvaro José Agámez Licha",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-async-generator-functions": "^7.2.0",
+    "@babel/preset-env": "^7.3.4",
+    "ava": "^1.2.1",
+    "esm": "^3.2.9",
+    "nodemon": "^1.18.10",
+    "standard": "^12.0.1"
+  }
+}
