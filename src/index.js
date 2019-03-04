@@ -2,8 +2,6 @@ import { getParams } from './helpers/cli'
 import * as stock from './stock'
 import server from './server'
 
-// import appPackage from './../package'
-
 const params = getParams(process.argv || {})
 
 if (params.help || params.h) {

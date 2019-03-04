@@ -6,12 +6,9 @@ const addRoute = (method, path, handler) => {
   const route = {
     handler,
     params: matchAll(/:(\w*)/g, path).map(param => param[1]),
-    // path: new RegExp(`^${path.replace(/\//g, '\\/').replace(/:(\w*)/g, '(\\w*)')}$`),
     path: new RegExp(`^${path.replace(/\//g, '\\/').replace(/:(.*)/g, '(.*)')}$`),
     method
   }
-
-  // console.log(route)
 
   if (Array.isArray(routes[method]) === false) {
     routes[method] = []
@@ -74,7 +71,6 @@ const verifyRoute = (path, method) => {
 }
 
 export default {
-  // addRoute,
   getRoutes,
   ...routerMethods,
   setRoutes,
